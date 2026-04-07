@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - GrowingIndia</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1a6fd4;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-box {
+            width: 44px;
+            height: 44px;
+            background: #000;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .brand-name {
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .paytm-badge {
+            background: #002970;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #4a90d9;
+            letter-spacing: 1px;
+        }
+        .close-btn {
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        /* AMOUNT */
+        .amount-bar {
+            background: white;
+            padding: 16px 20px;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+        .amount-bar strong {
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 16px;
+        }
+
+        /* PAYMENT OPTIONS BOX */
+        .options-box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .options-title {
+            padding: 16px 20px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* OPTION ROW */
+        .option-row {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s;
+            cursor: pointer;
+        }
+        .option-row:last-child { border-bottom: none; }
+        .option-row:hover { background: #f9f9f9; }
+
+        .option-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .option-info { flex: 1; }
+        .option-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .option-sub {
+            font-size: 13px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: #f0f0f0;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #555;
+        }
+        .badge.upi { background: #fff0e0; color: #e67e00; }
+        .badge.visa { background: #e8eeff; color: #1a3db0; }
+        .badge.rupay { background: #fff0f0; color: #c0392b; }
+
+        .option-arrow {
+            font-size: 18px;
+            color: #ccc;
+            margin-left: 12px;
+        }
+
+        /* FOOTER */
+        .secure-bar {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .secure-bar .shield { color: #22c55e; font-size: 16px; }
+        .secure-bar strong { color: #555; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-box">🌱</div>
+            <span class="brand-name">GrowingIndia</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <span class="paytm-badge">Paytm PG</span>
+            <a href="checkout.html" class="close-btn">✕</a>
+        </div>
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="amount-bar">
+        Select an option to pay <strong>₹199</strong>
+    </div>
+
+    <!-- PAYMENT OPTIONS -->
+    <div class="main">
+        <div class="options-box">
+            <div class="options-title">Payment Options</div>
+
+            <!-- UPI -->
+            <div class="option-row">
+                <div class="option-icon">🏹</div>
+                <div class="option-info">
+                    <div class="option-name">UPI</div>
+                    <div class="option-sub">
+                        <span class="badge upi">PhonePe</span>
+                        <span class="badge upi">Paytm</span>
+                        <span class="badge upi">GPay</span>
+                        <span>& more</span>
+                    </div>
+                </div>
+                <div class="option-arrow">›</div>
+            </div>
+
+            <!-- Net Banking -->
+            <div class="option-row">
+                <div class="option-icon">🏦</div>
+                <div class="option-info">
+                    <div class="option-name">Net Banking</div>
+                    <div class="option-sub">All major banks supported</div>
+                </div>
+                <div class="option-arrow">›</div>
+            </div>
+
+            <!-- Cards -->
+            <div class="option-row">
+                <div class="option-icon">💳</div>
+                <div class="option-info">
+                    <div class="option-name">Credit and Debit Cards</div>
+                    <div class="option-sub">
+                        <span class="badge rupay">RuPay</span>
+                        <span class="badge visa">VISA</span>
+                        <span class="badge">Mastercard</span>
+                        <span>& more</span>
+                    </div>
+                </div>
+                <div class="option-arrow">›</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECURE FOOTER -->
+    <div class="secure-bar">
+        <span class="shield">🛡</span>
+        <span>100% Secure Payments <strong>Powered by Paytm PG</strong></span>
+    </div>
+
+</body>
+</html>
